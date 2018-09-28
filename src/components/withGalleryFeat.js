@@ -7,15 +7,13 @@ export function withGalleryFeat(WrrapedComponent, listCard) {
             constructor(props) {
                 super(props);
                 this.state = {
-                    name: listCard.catalogName,
+                    name: listCard.catalogName || '',
                     list: listCard.collection || [],
                     copyList: listCard.collection || []
                 }
-                
             }
 
             onDelete = (key) => {
-               console.log('Delete item ', key);
                let newList = [];
                newList = this.state.list.slice(0,key).concat(this.state.list.slice(key+1))
                console.log('new array ', newList);
@@ -23,8 +21,7 @@ export function withGalleryFeat(WrrapedComponent, listCard) {
             }
 
             render() {
-                
-                return (                    
+                return (
                     <div className="gallery">
                         {
                          this.state.list.length > 0 ?
@@ -40,11 +37,10 @@ export function withGalleryFeat(WrrapedComponent, listCard) {
                           :
                           <div>
                               <p>No item to display</p>
-                              </div>
+                          </div>
                         }
                     </div>
                 )
-        
         }
       }
     )

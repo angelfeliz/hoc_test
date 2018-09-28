@@ -23,7 +23,7 @@
     .body {
     margin-top: 0.5%;
     margin-bottom: 0%;
-    background-color: blue;
+    
     flex-grow: 2;
     height: 200px;
     }

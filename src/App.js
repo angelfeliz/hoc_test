@@ -38,6 +38,7 @@ class App extends Component {
       `
     })
     .then(result => {
+      //This data object is to normalize the data for the Card Component
       let data = {
         catalogName: result.data.catalogue.name,
         collection: result.data.catalogue.children.map(item => item.product)
@@ -46,6 +47,7 @@ class App extends Component {
   });
   }
   render() {
+    //This HOC have the delete item functionality
     const EnhanceGallery = GalleryContainerWithFeature(Card, this.state.dataCard);
     return (
       
