@@ -16,7 +16,7 @@ const Card = (props) => {
                <img src={props.imageUrl} alt={`pic ${props.name}`}/>
             </div>
             <div className="footer">
-              <button onClick={() => props.onDelete(props.index)}>Eliminar</button>
+              <button onClick={() => props.onDelete(props.index)}>Delete</button>
               <span>{numberWithCommas(props.price)}</span>
             </div>
         </div>
